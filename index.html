@@ -30,7 +30,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
 .ci-row:active{background:rgba(255,255,255,.06)}
 .ck{width:22px;height:22px;border-radius:6px;border:2px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s}
 .ck.on::after{content:"✓";font-size:13px;color:#fff;font-weight:900}
-.cd{width:11px;height:11px;border-radius:50%;flex-shrink:0}
+.cd{display:none}
 .cl{color:#e2e8f0;font-size:13px;flex:1}
 .cn{color:rgba(255,255,255,.25);font-size:11px}
 #ip{z-index:1950;max-height:70vh}
@@ -55,8 +55,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
 #loc-fab:active{transform:scale(.88)}
 #stat{position:fixed;bottom:0;left:0;z-index:700;background:rgba(15,23,42,.85);padding:2px 10px;font-size:10px;color:rgba(255,255,255,.3);border-radius:0 6px 0 0;pointer-events:none}
 .mk{cursor:pointer!important;overflow:visible!important}
-.mkd{width:9px;height:9px;border-radius:50%;border:1.5px solid rgba(0,0,0,.3);box-shadow:0 1px 4px rgba(0,0,0,.5)}
-.mkd.sel{box-shadow:0 0 0 4px #fff,0 0 0 7px #ef4444,0 0 14px rgba(239,68,68,.6);width:9px;height:9px}
+.mkd{display:none}
+.mkd.sel-ring{pointer-events:none}
 .mkl{position:absolute;bottom:13px;left:50%;transform:translateX(-50%);white-space:nowrap;width:max-content;max-width:130px;overflow:hidden;text-overflow:ellipsis;font-size:10px;color:#111;background:rgba(255,255,255,0.93);padding:2px 6px;border-radius:4px;box-shadow:0 1px 5px rgba(0,0,0,.25);pointer-events:none;line-height:1.4;z-index:10}
 .my-dot{width:13px;height:13px;border-radius:50%;background:#38bdf8;border:2.5px solid #fff;box-shadow:0 0 0 4px rgba(56,189,248,.25),0 2px 8px rgba(0,0,0,.4)}
 .mk-sel-lbl-top{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);background:#fff;color:#111;font-size:11px;font-weight:700;padding:3px 9px;border-radius:7px;white-space:nowrap;width:max-content;max-width:160px;overflow:hidden;text-overflow:ellipsis;box-shadow:0 2px 10px rgba(0,0,0,.35);border:1.5px solid rgba(0,0,0,.08);pointer-events:none;z-index:20}
@@ -92,20 +92,20 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
     <div class="pt">레이어 선택</div>
     <div class="csg">
       <div class="csg-hd">LTE</div>
-      <div class="ci-row" onclick="toggleKey('lte_275')"><div class="ck" id="ck_lte_275"></div><div class="cd" style="background:#8B5CF6"></div><div class="cl">275 MHz</div><div class="cn">627</div></div>
-      <div class="ci-row" onclick="toggleKey('lte_1350')"><div class="ck" id="ck_lte_1350"></div><div class="cd" style="background:#3B82F6"></div><div class="cl">1350 MHz</div><div class="cn">2808</div></div>
-      <div class="ci-row" onclick="toggleKey('lte_2500')"><div class="ck" id="ck_lte_2500"></div><div class="cd" style="background:#10B981"></div><div class="cl">2500 MHz</div><div class="cn">3858</div></div>
-      <div class="ci-row" onclick="toggleKey('lte_2850')"><div class="ck" id="ck_lte_2850"></div><div class="cd" style="background:#F59E0B"></div><div class="cl">2850 MHz</div><div class="cn">1738</div></div>
-      <div class="ci-row" onclick="toggleKey('lte_3200')"><div class="ck" id="ck_lte_3200"></div><div class="cd" style="background:#EF4444"></div><div class="cl">3200 MHz</div><div class="cn">1438</div></div>
+      <div class="ci-row" onclick="toggleKey('lte_275')"><div class="ck" id="ck_lte_275"></div><svg width="14" height="14" viewBox="0 0 14 14" style="flex-shrink:0;overflow:visible"><circle cx="7.0" cy="7.0" r="5.5" fill="#8B5CF6" stroke="white" stroke-width="1.5"/></svg><div class="cl">275 MHz</div><div class="cn">627</div></div>
+      <div class="ci-row" onclick="toggleKey('lte_1350')"><div class="ck" id="ck_lte_1350"></div><svg width="14" height="14" viewBox="0 0 14 14" style="flex-shrink:0;overflow:visible"><circle cx="7.0" cy="7.0" r="5.5" fill="#3B82F6" stroke="white" stroke-width="1.5"/></svg><div class="cl">1350 MHz</div><div class="cn">2808</div></div>
+      <div class="ci-row" onclick="toggleKey('lte_2500')"><div class="ck" id="ck_lte_2500"></div><svg width="14" height="14" viewBox="0 0 14 14" style="flex-shrink:0;overflow:visible"><circle cx="7.0" cy="7.0" r="5.5" fill="#10B981" stroke="white" stroke-width="1.5"/></svg><div class="cl">2500 MHz</div><div class="cn">3858</div></div>
+      <div class="ci-row" onclick="toggleKey('lte_2850')"><div class="ck" id="ck_lte_2850"></div><svg width="14" height="14" viewBox="0 0 14 14" style="flex-shrink:0;overflow:visible"><circle cx="7.0" cy="7.0" r="5.5" fill="#F59E0B" stroke="white" stroke-width="1.5"/></svg><div class="cl">2850 MHz</div><div class="cn">1738</div></div>
+      <div class="ci-row" onclick="toggleKey('lte_3200')"><div class="ck" id="ck_lte_3200"></div><svg width="14" height="14" viewBox="0 0 14 14" style="flex-shrink:0;overflow:visible"><circle cx="7.0" cy="7.0" r="5.5" fill="#EF4444" stroke="white" stroke-width="1.5"/></svg><div class="cl">3200 MHz</div><div class="cn">1438</div></div>
     </div>
     <div class="csg">
       <div class="csg-hd">5G</div>
-      <div class="ci-row" onclick="toggleKey('aau')"><div class="ck" id="ck_aau"></div><div class="cd" style="background:#EC4899"></div><div class="cl">AAU (5G)</div><div class="cn">5629</div></div>
+      <div class="ci-row" onclick="toggleKey('aau')"><div class="ck" id="ck_aau"></div><svg width="14" height="14" viewBox="0 0 14 14" style="flex-shrink:0;overflow:visible"><polygon points="7.0,1.5 12.5,7.0 7.0,12.5 1.5,7.0" fill="#EC4899" stroke="white" stroke-width="1.5"/></svg><div class="cl">AAU (5G)</div><div class="cn">5629</div></div>
     </div>
     <div class="csg">
       <div class="csg-hd">기타</div>
-      <div class="ci-row" onclick="toggleKey('ps')"><div class="ck" id="ck_ps"></div><div class="cd" style="background:#F97316"></div><div class="cl">재난망 (PS)</div><div class="cn">950</div></div>
-      <div class="ci-row" onclick="toggleKey('g3')"><div class="ck" id="ck_g3"></div><div class="cd" style="background:#94A3B8"></div><div class="cl">3G</div><div class="cn">391</div></div>
+      <div class="ci-row" onclick="toggleKey('ps')"><div class="ck" id="ck_ps"></div><svg width="14" height="14" viewBox="0 0 14 14" style="flex-shrink:0;overflow:visible"><polygon points="7.00,2.00 8.73,4.62 11.76,5.45 9.80,7.91 9.94,11.05 7.00,9.94 4.06,11.05 4.20,7.91 2.24,5.45 5.27,4.62" fill="#F97316" stroke="white" stroke-width="1"/></svg><div class="cl">재난망 (PS)</div><div class="cn">950</div></div>
+      <div class="ci-row" onclick="toggleKey('g3')"><div class="ck" id="ck_g3"></div><svg width="14" height="14" viewBox="0 0 14 14" style="flex-shrink:0;overflow:visible"><polygon points="7.0,1.5 12.5,12.5 1.5,12.5" fill="#94A3B8" stroke="white" stroke-width="1.5"/></svg><div class="cl">3G</div><div class="cn">391</div></div>
     </div>
   </div>
 </div>
@@ -160,45 +160,60 @@ function tryLoc(pan){
 }
 function goLoc(){tryLoc(true);}
 
-function mkIcon(color,name,sel,zoom){
-  if(sel){
-    return L.divIcon({className:'mk',
-      html:`<div style='position:relative;width:10px;height:10px'><div class='mkl mk-sel-lbl-top'>${name}</div><div class='mkd sel' style='background:${color}'></div></div>`,
-      iconSize:[10,10],iconAnchor:[5,5]});
+function mkSvgShape(color,shape,S,sel){
+  const h=S/2;
+  let sh='';
+  if(shape==='circle'){
+    sh=`<circle cx="${h}" cy="${h}" r="${h-1.5}" fill="${color}" stroke="white" stroke-width="2"/>`;
+  }else if(shape==='diamond'){
+    sh=`<polygon points="${h},2 ${S-2},${h} ${h},${S-2} 2,${h}" fill="${color}" stroke="white" stroke-width="1.8"/>`;
+  }else if(shape==='triangle'){
+    sh=`<polygon points="${h},2 ${S-2},${S-2} 2,${S-2}" fill="${color}" stroke="white" stroke-width="1.8"/>`;
+  }else if(shape==='star'){
+    const pts=[];
+    for(let i=0;i<10;i++){
+      const r=i%2===0?h-2:h*0.42;
+      const a=(i*36-90)*Math.PI/180;
+      pts.push(`${(h+r*Math.cos(a)).toFixed(2)},${(h+r*Math.sin(a)).toFixed(2)}`);
+    }
+    sh=`<polygon points="${pts.join(' ')}" fill="${color}" stroke="white" stroke-width="1.2"/>`;
   }
-  return L.divIcon({className:'mk',html:`<div style='position:relative;width:9px;height:9px'><div class='mkl'>${name}</div><div class='mkd' style='background:${color}'></div></div>`,iconSize:[9,9],iconAnchor:[4.5,4.5]});
+  const ring=sel?`<circle cx="${h}" cy="${h}" r="${h+4}" fill="none" stroke="white" stroke-width="3"/><circle cx="${h}" cy="${h}" r="${h+7}" fill="none" stroke="#ef4444" stroke-width="2.5"/>`:'';
+  return `<svg style='position:absolute;left:0;top:0;width:${S}px;height:${S}px;overflow:visible'>${ring}${sh}</svg>`;
+}
+function mkIcon(color,name,sel,zoom,shape){
+  shape=shape||'circle';
+  const S=sel?16:14;
+  return L.divIcon({className:'mk',
+    html:`<div style='position:relative;width:${S}px;height:${S}px;overflow:visible'><div class='mkl'>${name}</div>${mkSvgShape(color,shape,S,sel)}</div>`,
+    iconSize:[S,S],iconAnchor:[S/2,S/2]});
 }
 
 function mkAauIcon(color,name,azs,sel,zoom){
+  const S=sel?16:14,h=S/2;
   let arrows='';
   (azs&&azs.length?azs:[]).forEach(az=>{
-    arrows+=`<g transform="rotate(${az},0,0)">
-      <line x1="0" y1="-6" x2="0" y2="-18" stroke="${color}" stroke-width="2.5" stroke-linecap="round" pointer-events="none"/>
-      <polygon points="0,-23 3.5,-15 -3.5,-15" fill="${color}" pointer-events="none"/>
+    arrows+=`<g transform="rotate(${az},${h},${h})">
+      <line x1="${h}" y1="${h}" x2="${h}" y2="${h-14}" stroke="${color}" stroke-width="2.5" stroke-linecap="round" pointer-events="none"/>
+      <polygon points="${h},${h-19} ${h+3.5},${h-11} ${h-3.5},${h-11}" fill="${color}" pointer-events="none"/>
     </g>`;
   });
-  const dot=sel
-    ?`<circle cx="0" cy="0" r="5" fill="${color}" stroke="white" stroke-width="3"/>
-      <circle cx="0" cy="0" r="11" fill="none" stroke="white" stroke-width="3"/>
-      <circle cx="0" cy="0" r="14" fill="none" stroke="#ef4444" stroke-width="2.5"/>`
-    :`<circle cx="0" cy="0" r="5" fill="${color}" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>`;
+  const dot=mkSvgShape(color,'diamond',S,sel);
   const lbl=`<div class='mkl'>${name}</div>`;
   return L.divIcon({className:'mk',
-    html:`<div style='position:relative;width:10px;height:10px;overflow:visible'>
-      <svg style="position:absolute;left:5px;top:5px;width:0;height:0;overflow:visible;pointer-events:none">${arrows}</svg>
-      <svg style="position:absolute;left:5px;top:5px;width:0;height:0;overflow:visible">${dot}</svg>
-      ${lbl}
-    </div>`,
-    iconSize:[10,10],iconAnchor:[5,5]});
+    html:`<div style='position:relative;width:${S}px;height:${S}px;overflow:visible'>
+      <svg style='position:absolute;left:0;top:0;width:${S}px;height:${S}px;overflow:visible;pointer-events:none'>${arrows}</svg>
+      ${dot}${lbl}</div>`,
+    iconSize:[S,S],iconAnchor:[h,h]});
 }
-
+const SHAPE_MAP={lte:'circle',aau:'diamond',ps:'star',g3:'triangle'};
 function getIcon(key,loc,sel,zoom){
   const cfg=CFG[key];
   if(cfg.t==='aau'){
     const azs=(loc[3]||[]).map(s=>s[1]).filter(a=>a!=null);
     return mkAauIcon(cfg.c,loc[2],azs,sel,zoom);
   }
-  return mkIcon(cfg.c,loc[2],sel,zoom);
+  return mkIcon(cfg.c,loc[2],sel,zoom,SHAPE_MAP[cfg.t]||'circle');
 }
 
 
