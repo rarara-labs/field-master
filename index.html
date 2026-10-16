@@ -183,14 +183,14 @@ function mkSvgShape(color,shape,S,sel){
 }
 function mkIcon(color,name,sel,zoom,shape){
   shape=shape||'circle';
-  const S=sel?16:14;
+  const S=sel?24:20;
   return L.divIcon({className:'mk',
     html:`<div style='position:relative;width:${S}px;height:${S}px;overflow:visible'><div class='mkl'>${name}</div>${mkSvgShape(color,shape,S,sel)}</div>`,
     iconSize:[S,S],iconAnchor:[S/2,S/2]});
 }
 
 function mkAauIcon(color,name,azs,sel,zoom){
-  const S=sel?16:14,h=S/2;
+  const S=sel?24:20,h=S/2;
   let arrows='';
   (azs&&azs.length?azs:[]).forEach(az=>{
     arrows+=`<g transform="rotate(${az},${h},${h})">
